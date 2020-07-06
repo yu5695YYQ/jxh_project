@@ -1,11 +1,12 @@
 <template>
-    <div class="menu_admin">
-        <a-menu mode="inline" :open-keys="openKeys"
-                style="position: relative"
-                theme="dark"
-                :default-selected-keys="defaultSelectedKeys"
-                @openChange="menuOpenChange"
-                @click="menuTrigger">
+    <div class="menu_nav">
+        <div class="menu_admin">
+            <a-menu mode="inline" :open-keys="openKeys"
+                    style="position: relative;float: left"
+                    theme="dark"
+                    :default-selected-keys="defaultSelectedKeys"
+                    @openChange="menuOpenChange"
+                    @click="menuTrigger">
                 <a-menu-item key="1">
                     <a-icon type="appstore"/>
                     ant 菜单1
@@ -33,9 +34,13 @@
                     </a-sub-menu>-->
                 </a-sub-menu>
 
-        </a-menu>
-        <slot></slot>
+            </a-menu>
+        </div>
+        <div class="right">
+            <slot></slot>
+        </div>
   </div>
+
 </template>
 
 <script>
@@ -87,12 +92,21 @@ export default {
 }
 </script>
 <style lang="scss">
-    .menu_admin{
-        width: 256px;
+    .menu_nav{
         height: 100%;
-        .ant-menu-inline{
+        display: flex;
+        .menu_admin{
+            width: 256px;
+            height: 100%;
+            .ant-menu-inline{
+                height: 100%;
+            }
+        }
+        .right{
+            flex: 1;
             height: 100%;
         }
     }
+
 </style>
 <style src="../assets/css/normalize.css"></style>
