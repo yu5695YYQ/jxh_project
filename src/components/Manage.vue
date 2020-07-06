@@ -1,7 +1,7 @@
 <template>
-    <div style="position: relative">
+    <div class="menu_admin">
         <a-menu mode="inline" :open-keys="openKeys"
-                style="width: 256px;float: left"
+                style="position: relative"
                 theme="dark"
                 :default-selected-keys="defaultSelectedKeys"
                 @openChange="menuOpenChange"
@@ -86,11 +86,13 @@ export default {
     }
 }
 </script>
-<style>
-.menuClass{
-    color:red;
-}
-.ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-submenu:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-submenu-selected{
-    border-bottom: none;
-}
+<style lang="scss">
+    .menu_admin{
+        width: 256px;
+        height: 100%;
+        .ant-menu-inline{
+            height: 100%;
+        }
+    }
 </style>
+<style src="../assets/css/normalize.css"></style>
